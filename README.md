@@ -16,27 +16,5 @@
 
 ### Link to deployed application
 
+https://emilyshurtz94.github.io/homework-3/
 ---
-
-
-var passwordLower= confirm("Would you like to add lowercase letters");
-if (lowerCase===true){
-  for(var i=0;i<passwordLength; i++){
-    var possibleIndex=Math.floor(Math.random()* lowerCase.length);
-    var userLowerCase = lowerCase[possibleIndex];
-
-  }
-
-  // window.alert("Password Criteria")
-
-// window.prompt("include lowercase")
-
-// window.prompt("include numbers")
-
-// window.prompt("include special characters")
-
-
-// do a for loop
-// join method to join the arrays "firstsetsecondsetthirdsetfourthset"-no spaces
-// push or shift the array
-// result.join[ ]

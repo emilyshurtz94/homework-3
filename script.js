@@ -7,58 +7,58 @@ var result = [];
 var possibleArray = [];
 var generateBtn = document.querySelector("#generate");
 
-
-
-
-var passwordLength = window.prompt("Password must be between 8 and 128 characters long");
-if (passwordLength >= 8 || passwordLength <= 128) {
-  result = true;
-} else {
-  passwordLength < 8 || passwordLength > 128;
-  alert("Password length invalid, Try again");
-}
-
-var passwordUpper = confirm("Would you like to add uppercase letters");
-for (var i = 0; i < passwordLength; i++) {
-  var possibleIndex = Math.floor(Math.random() * upperCase.length);
-  var possibleChar = upperCase[possibleIndex];
-  possibleArray.push(possibleChar);
-}
-
-var passwordLower = confirm("Would you like to add lowercase letters");
-for (var i = 0; i < passwordLength; i++) {
-  var possibleIndex = Math.floor(Math.random() * upperCase.length);
-  var possibleChar = upperCase[possibleIndex];
-  possibleArray.push(possibleChar);
-}
-
-var passwordSymbols = confirm("Would you like to add symbols");
-for (var i = 0; i < passwordLength; i++) {
-  var possibleIndex = Math.floor(Math.random() * symbols.length);
-  var possibleChar = upperCase[possibleIndex];
-  possibleArray.push(possibleChar);
-}
-
-var passwordNumeric = confirm("Would you like to add numbers");
-for (var i = 0; i < passwordLength; i++) {
-  var possibleIndex = Math.floor(Math.random() * upperCase.length);
-  var possibleChar = upperCase[possibleIndex];
-  possibleArray.push(possibleChar);
-}
-
-
 function generatePassword() {
-  return ("generated password");
 
-
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+  var passwordLength = window.prompt("Password must be between 8 and 128 characters long");
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length invalid, Try again")
+    return;
   }
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  var passwordUpper = confirm("Would you like to add uppercase letters");
+  if (passwordUpper === true) {
+    for (var i = 0; i < upperCase.Length; i++) {
+      var possibleChar = upperCase[i];
+      possibleArray.push(possibleChar);
+    }
+  }
+  var passwordLower = confirm("Would you like to add lowercase letters");
+  if (passwordLower === true) {
+    for (var i = 0; i < lowerCase.length; i++) {
+      var possibleChar = lowerCase[i];
+      possibleArray.push(possibleChar);
+    }
+  }
+  var passwordSymbols = confirm("Would you like to add symbols");
+  if (passwordSymbols === true) {
+    for (var i = 0; i < symbols.length; i++) {
+      var possibleChar = symbols[i];
+      possibleArray.push(possibleChar);
+    }
+  }
+  var passwordNumeric = confirm("Would you like to add numbers");
+  if (passwordNumeric === true) {
+    for (var i = 0; i < numeric.length; i++) {
+      var possibleChar = numeric[i];
+      possibleArray.push(possibleChar);
+    }
+  }
+  console.log("possibleArray", possibleArray)
+  for (var i = 0; i < passwordLength; i++) {
+    var possibleIndex = Math.floor(Math.random() * possibleArray.length);
+    var possibleChar = possibleArray[possibleIndex];
+    result.push(possibleChar);
+  }
+
+  console.log("result", result);
 }
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = result.join("");
+}
+
+generateBtn.addEventListener("click", writePassword);
+
