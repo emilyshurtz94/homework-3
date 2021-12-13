@@ -11,7 +11,7 @@
 
 ## Screenshot of Password Generator
 
-
+https://raw.githubusercontent.com/emilyshurtz94/homework-3/main/images/password%20generator%20screenshot.png
 ---
 
 ### Link to deployed application
